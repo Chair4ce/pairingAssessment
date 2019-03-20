@@ -16,4 +16,12 @@ public class SetTest {
         subject.add();
         assertFalse(subject.isEmpty());
     }
+
+    @Test
+    public void SetIsEmptyAfterRemoving() {
+        Set subject = new Set();
+        subject.add();
+        subject.remove();
+        assertTrue(subject.isEmpty());
+    }
 }

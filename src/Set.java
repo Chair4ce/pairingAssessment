@@ -8,4 +8,8 @@ public class Set {
     public void add() {
         this.emptiness = false;
     }
+
+    public void remove() {
+        this.emptiness = true;
+    }
 }
