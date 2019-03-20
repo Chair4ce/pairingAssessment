@@ -13,15 +13,23 @@ public class SetTest {
     @Test
     public void SetIsNotEmptyAfterAdding() {
         Set subject = new Set();
-        subject.add();
+        subject.add(new Object());
         assertFalse(subject.isEmpty());
     }
 
     @Test
     public void SetIsEmptyAfterRemoving() {
         Set subject = new Set();
-        subject.add();
+        subject.add(new Object());
         subject.remove();
         assertTrue(subject.isEmpty());
+    }
+
+    @Test
+    public void SetContainsObjectAfterAdding() {
+        Set subject = new Set();
+        Object object = new Object();
+        subject.add(object);
+        assertTrue(subject.contains(object));
     }
 }
