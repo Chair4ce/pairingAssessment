@@ -1,5 +1,6 @@
 public class Set {
-    public boolean isEmpty() {
-        return true;
+    public boolean isEmpty = true;
+    public void setThing() {
+
     }
 }

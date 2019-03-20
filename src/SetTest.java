@@ -6,8 +6,7 @@ import static org.junit.Assert.assertFalse;
 
 public class SetTest {
     @Test
-    public void NewSetIsEmpty() {
-        Set subject = new Set();
-        assertTrue(subject.isEmpty())
+    public void test() {
+        assertTrue(new Set().isEmpty);
     }
 }
