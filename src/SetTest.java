@@ -47,4 +47,15 @@ public class SetTest {
         subject.remove(object);
         assertFalse(subject.contains(object));
     }
+
+    @Test
+    public void SetContainsMultipleObjectsAfterAdd() {
+        Object object1 = new Object();
+        Object object2 = new Object();
+        subject.add(object1);
+        subject.add(object2);
+        
+        assertTrue(subject.contains(object1));
+        assertTrue(subject.contains(object2));
+    }
 }

@@ -1,13 +1,15 @@
 public class Set {
     private boolean emptiness = true;
     private Object[] container = new Object[10];
+    private int count = 0;
 
     public boolean isEmpty() {
         return this.emptiness;
     }
 
     public void add(Object object) {
-        container[0] = object;
+        container[count] = object;
+        count++;
         this.emptiness = false;
     }
 
@@ -20,8 +22,10 @@ public class Set {
 
     public boolean contains(Object object) {
         boolean doesContain = false;
-        if (container[0] != null && container[0].equals(object)) {
-            doesContain = true;
+        for (int index = 0; index < count; index++) {
+            if (container[index] != null && container[index].equals(object)) {
+                doesContain = true;
+            }
         }
         return doesContain;
     }
