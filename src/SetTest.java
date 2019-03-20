@@ -27,8 +27,9 @@ public class SetTest {
 
     @Test
     public void SetIsEmptyAfterRemoving() {
-        subject.add(new Object());
-        subject.remove();
+        Object object = new Object();
+        subject.add(object);
+        subject.remove(object);
         assertTrue(subject.isEmpty());
     }
 
@@ -37,5 +38,13 @@ public class SetTest {
         Object object = new Object();
         subject.add(object);
         assertTrue(subject.contains(object));
+    }
+
+    @Test
+    public void SetDoesNotContainObjectAfterRemoving() {
+        Object object = new Object();
+        subject.add(object);
+        subject.remove(object);
+        assertFalse(subject.contains(object));
     }
 }
