@@ -10,4 +10,10 @@ public class SetTest {
         assertTrue(new Set().isEmpty());
     }
 
+    @Test
+    public void SetIsNotEmptyAfterAdding() {
+        Set subject = new Set();
+        subject.add();
+        assertFalse(subject.isEmpty());
+    }
 }
