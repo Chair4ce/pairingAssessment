@@ -5,8 +5,5 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 public class SetTest {
-    @Test
-    public void test() {
-        assertTrue(new Set().isEmpty);
-    }
+
 }
