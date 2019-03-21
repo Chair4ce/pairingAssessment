@@ -58,4 +58,21 @@ public class SetTest {
         assertTrue(subject.contains(object1));
         assertTrue(subject.contains(object2));
     }
+
+    @Test
+    public void SetRemovesMany() {
+        Object object1 = new Object();
+        Object object2 = new Object();
+        Object object3 = new Object();
+        subject.add(object1);
+        subject.add(object2);
+        subject.add(object3);
+        subject.remove(object1);
+        subject.remove(object2);
+
+        assertFalse(subject.contains(object1));
+        assertFalse(subject.contains(object2));
+        assertTrue(subject.contains(object3));
+
+    }
 }

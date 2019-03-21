@@ -12,9 +12,12 @@ public class Set {
     }
 
     public void remove(Object object) {
-        if (this.contains(object)) {
-            this.container[0] = null;
-            count--;
+        for (int index = 0; index < count; index++) {
+            if (container[index].equals(object)) {
+                container[index] = container[count - 1];
+                container[count - 1] = null;
+                count--;
+            }
         }
     }
 
