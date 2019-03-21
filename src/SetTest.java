@@ -74,4 +74,16 @@ public class SetTest {
         assertFalse(subject.contains(object2));
         assertTrue(subject.contains(object3));
     }
+
+    @Test
+    public void NoDuplicates() {
+        Object object = new Object();
+        subject.add(object);
+        subject.add(object);
+        subject.add(object);
+        subject.add(object);
+        subject.remove(object);
+        assertTrue(subject.isEmpty());
+        assertFalse(subject.contains(object));
+    }
 }

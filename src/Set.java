@@ -7,8 +7,10 @@ public class Set {
     }
 
     public void add(Object object) {
-        container[count] = object;
-        count++;
+        if (!contains(object)) {
+            container[count] = object;
+            count++;
+        }
     }
 
     public void remove(Object object) {
