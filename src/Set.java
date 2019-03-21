@@ -1,5 +1,6 @@
 public class Set {
-    private Object[] container = new Object[10];
+    private int maxSize = 10;
+    private Object[] container = new Object[maxSize];
     private int count = 0;
 
     public boolean isEmpty() {
@@ -7,6 +8,9 @@ public class Set {
     }
 
     public void add(Object object) {
+        if (count == maxSize) {
+            resize();
+        }
         if (!contains(object)) {
             container[count] = object;
             count++;
@@ -33,5 +37,14 @@ public class Set {
             }
         }
         return -1;
+    }
+
+    private void resize() {
+        maxSize *= 2;
+        Object[] replacementContainer = new Object[maxSize];
+        for (int index = 0; index < count; index++) {
+            replacementContainer[index] = container[index];
+        }
+        container = replacementContainer;
     }
 }

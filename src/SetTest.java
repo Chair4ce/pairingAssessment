@@ -54,7 +54,7 @@ public class SetTest {
         Object object2 = new Object();
         subject.add(object1);
         subject.add(object2);
-        
+
         assertTrue(subject.contains(object1));
         assertTrue(subject.contains(object2));
     }
@@ -85,5 +85,17 @@ public class SetTest {
         subject.remove(object);
         assertTrue(subject.isEmpty());
         assertFalse(subject.contains(object));
+    }
+
+    @Test
+    public void AnySizeSet() {
+        int objectCount = (int) (Math.random() * 10000);
+        for (int i = 0; i < objectCount; i++) {
+            subject.add(i);
+        }
+
+        assertTrue(subject.contains(0));
+        assertTrue(subject.contains(objectCount / 2));
+        assertTrue(subject.contains(objectCount - 1));
     }
 }
