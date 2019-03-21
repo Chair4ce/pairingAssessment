@@ -12,21 +12,24 @@ public class Set {
     }
 
     public void remove(Object object) {
-        for (int index = 0; index < count; index++) {
-            if (container[index].equals(object)) {
-                container[index] = container[count - 1];
-                container[count - 1] = null;
-                count--;
-            }
+        int index = indexOf(object);
+        if (index > -1) {
+            container[index] = container[count - 1];
+            container[count - 1] = null;
+            count--;
         }
     }
 
     public boolean contains(Object object) {
+        return indexOf(object) > -1;
+    }
+
+    private int indexOf(Object object) {
         for (int index = 0; index < count; index++) {
             if (container[index].equals(object)) {
-                return true;
+                return index;
             }
         }
-        return false;
+        return -1;
     }
 }

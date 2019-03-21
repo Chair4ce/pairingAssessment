@@ -73,6 +73,5 @@ public class SetTest {
         assertFalse(subject.contains(object1));
         assertFalse(subject.contains(object2));
         assertTrue(subject.contains(object3));
-
     }
 }
